@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我的SurVis可视化</title>
+  <script src="https://unpkg.com/survis@latest/dist/survis.min.js"></script>
+  <style>
+    #network {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>网络关系图</h1>
+  <div id="network"></div>
+
+  <script>
+    const data = {
+      nodes: [
+        { id: 1, label: "节点1" },
+        { id: 2, label: "节点2" },
+        { id: 3, label: "节点3" }
+      ],
+      edges: [
+        { from: 1, to: 2 },
+        { from: 2, to: 3 },
+        { from: 3, to: 1 }
+      ]
+    };
+
+    const network = new survis.Network(
+      document.getElementById('network'),
+      data
+    );
+  </script>
+</body>
+</html>
